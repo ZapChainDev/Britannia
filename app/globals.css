@@ -1,26 +1,462 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1a1410;
+  --foreground: #f5f1e8;
+  --accent-gold: #d4af37;
+  --accent-brass: #b8860b;
+  --brown-dark: #2d1f17;
+  --brown-medium: #3d2a1f;
+  --cream: #f5f1e8;
+  --frame-size: 28px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-brass: var(--accent-brass);
+  --color-brown-dark: var(--brown-dark);
+  --color-brown-medium: var(--brown-medium);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-cormorant), serif;
+  --font-mono: var(--font-cormorant), serif;
+  --font-heading: var(--font-playfair), serif;
+  --font-body: var(--font-cormorant), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), serif;
+  overflow-x: hidden;
+}
+
+/* Ornate corner decorations */
+.ornate-corners::before,
+.ornate-corners::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L80,0 L80,10 L10,10 L10,80 L0,80 Z' fill='%23d4af37' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ornate-corners::before {
+  top: 0;
+  left: 0;
+}
+
+.ornate-corners::after {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Victorian–Baroque Ornamental Page Frame
+   Thick, textured, historic — like an antique portrait frame
+   ═══════════════════════════════════════════════════════════════ */
+
+/* The thick textured frame bands — fixed to viewport edges */
+.historic-frame-top,
+.historic-frame-bottom,
+.historic-frame-left,
+.historic-frame-right {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  background:
+    url("/images/texture-dark.jpg") center/cover no-repeat,
+    #1a1005;
+}
+
+.historic-frame-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    inset 0 -6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 rgba(212, 175, 55, 0.12);
+}
+
+.historic-frame-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  border-top: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    inset 0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(212, 175, 55, 0.12);
+}
+
+.historic-frame-left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  border-right: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    inset -6px 0 12px rgba(0, 0, 0, 0.5),
+    inset -1px 0 0 rgba(212, 175, 55, 0.12);
+}
+
+.historic-frame-right {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 28px;
+  border-left: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow:
+    inset 6px 0 12px rgba(0, 0, 0, 0.5),
+    inset 1px 0 0 rgba(212, 175, 55, 0.12);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --frame-size: 10px;
+  }
+
+  .historic-frame-left,
+  .historic-frame-right {
+    width: 10px;
+  }
+
+  .historic-frame-top,
+  .historic-frame-bottom {
+    height: 10px;
+  }
+
+  .historic-frame-inner {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* Second inner gold pinstripe */
+.historic-frame-inner {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Baroque corner ornaments — fixed to viewport */
+.baroque-corner {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+}
+.baroque-corner--tl {
+  top: 0;
+  left: 0;
+}
+.baroque-corner--tr {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+.baroque-corner--bl {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+.baroque-corner--br {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+/* Victorian section divider */
+.victorian-divider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 3px;
+  z-index: 10;
+}
+
+.victorian-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.15) 10%,
+    rgba(212, 175, 55, 0.4) 30%,
+    rgba(212, 175, 55, 0.6) 50%,
+    rgba(212, 175, 55, 0.4) 70%,
+    rgba(212, 175, 55, 0.15) 90%,
+    transparent 100%
+  );
+}
+
+.victorian-divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.1) 10%,
+    rgba(212, 175, 55, 0.3) 30%,
+    rgba(212, 175, 55, 0.5) 50%,
+    rgba(212, 175, 55, 0.3) 70%,
+    rgba(212, 175, 55, 0.1) 90%,
+    transparent 100%
+  );
+}
+
+/* Victorian ornate section border */
+.baroque-section {
+  position: relative;
+}
+
+.baroque-section::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.baroque-section::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  right: 26px;
+  bottom: 26px;
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Medieval RPG Button — carved wood, metallic trim, embossed
+   ═══════════════════════════════════════════════════════════════ */
+.btn-medieval {
+  position: relative;
+  display: inline-block;
+  padding: 14px 48px;
+  font-family: var(--font-heading), serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e8d5a3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* ── Dark carved wood background ── */
+  background: linear-gradient(
+    180deg,
+    rgba(45, 35, 20, 0.95) 0%,
+    rgba(30, 22, 12, 1) 40%,
+    rgba(22, 16, 8, 1) 60%,
+    rgba(35, 26, 14, 0.95) 100%
+  );
+
+  /* ── Outer metallic border ── */
+  border: none;
+  outline: 2px solid #7a6532;
+  outline-offset: -2px;
+
+  /* ── Beveled edges + ambient shadow ── */
+  box-shadow:
+    /* outer drop shadow */
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    0 1px 3px rgba(0, 0, 0, 0.5),
+    /* top bevel highlight */ inset 0 1px 0 rgba(212, 175, 55, 0.25),
+    /* bottom bevel shadow */ inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+    /* left bevel highlight */ inset 1px 0 0 rgba(212, 175, 55, 0.15),
+    /* right bevel shadow */ inset -1px 0 0 rgba(0, 0, 0, 0.4),
+    /* inner glow */ inset 0 0 20px rgba(212, 175, 55, 0.06);
+
+  /* ── Golden embossed text ── */
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(212, 175, 55, 0.15);
+}
+
+/* Inner metallic trim line (embossed center panel) */
+.btn-medieval::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(122, 101, 50, 0.5);
+  pointer-events: none;
+  box-shadow:
+    inset 0 1px 0 rgba(212, 175, 55, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Corner metallic studs */
+.btn-medieval::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    /* top-left corner */
+    radial-gradient(
+      circle at 4px 4px,
+      rgba(212, 175, 55, 0.35) 0%,
+      rgba(212, 175, 55, 0.1) 2px,
+      transparent 3px
+    ),
+    /* top-right corner */
+    radial-gradient(
+        circle at calc(100% - 4px) 4px,
+        rgba(212, 175, 55, 0.35) 0%,
+        rgba(212, 175, 55, 0.1) 2px,
+        transparent 3px
+      ),
+    /* bottom-left corner */
+    radial-gradient(
+        circle at 4px calc(100% - 4px),
+        rgba(212, 175, 55, 0.35) 0%,
+        rgba(212, 175, 55, 0.1) 2px,
+        transparent 3px
+      ),
+    /* bottom-right corner */
+    radial-gradient(
+        circle at calc(100% - 4px) calc(100% - 4px),
+        rgba(212, 175, 55, 0.35) 0%,
+        rgba(212, 175, 55, 0.1) 2px,
+        transparent 3px
+      );
+  pointer-events: none;
+}
+
+/* Hover — intensify glow + brighten trim */
+.btn-medieval:hover {
+  color: #f0dfa8;
+  outline-color: #9a8245;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.8),
+    0 1px 4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(212, 175, 55, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+    inset 1px 0 0 rgba(212, 175, 55, 0.2),
+    inset -1px 0 0 rgba(0, 0, 0, 0.4),
+    inset 0 0 30px rgba(212, 175, 55, 0.1);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.8),
+    0 0 18px rgba(212, 175, 55, 0.25);
+}
+
+.btn-medieval:hover::before {
+  border-color: rgba(154, 130, 69, 0.6);
+}
+
+/* Active / pressed — push in effect */
+.btn-medieval:active {
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Mobile Responsive Overrides
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* Thinner frame bands on mobile */
+  .historic-frame-top,
+  .historic-frame-bottom {
+    height: 16px;
+  }
+  .historic-frame-left,
+  .historic-frame-right {
+    width: 16px;
+  }
+
+  /* Adjust inner pinstripe */
+  .historic-frame-inner {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  /* Baroque section borders closer on mobile */
+  .baroque-section::before {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+  .baroque-section::after {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  /* Smaller baroque corner ornaments on mobile */
+  .baroque-corner svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Smaller button on mobile */
+  .btn-medieval {
+    padding: 12px 32px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+
+  /* Hero CTA — larger tap target on mobile */
+  .btn-medieval--hero {
+    padding: 16px 40px;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    min-height: 52px;
+  }
+
+  /* Header position under thinner frame */
+  .header-fixed {
+    top: 16px !important;
+  }
 }
