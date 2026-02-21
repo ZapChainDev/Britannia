@@ -13,16 +13,16 @@ export default function Hero() {
           playsInline
           poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.55)" }}
+          style={{ filter: "brightness(0.75)" }}
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
 
         {/* Fallback gradient (shows when no video/poster yet) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1005] via-[#2d1f0e] to-[#1a1208] opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1005] via-[#2d1f0e] to-[#1a1208] opacity-20" />
 
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* Atmospheric vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.6)_100%)]" />
@@ -46,7 +46,11 @@ export default function Hero() {
         {/* Main Heading — stacked on mobile */}
         <h1
           className="font-heading font-bold text-cream leading-tight mb-3 sm:mb-4"
-          style={{ fontSize: "clamp(1.75rem, 8vw, 5.5rem)" }}
+          style={{
+            fontSize: "clamp(1.75rem, 8vw, 5.5rem)",
+            textShadow:
+              "0 2px 4px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.5)",
+          }}
         >
           <span className="block sm:inline">RESTORING ICONS</span>{" "}
           <span

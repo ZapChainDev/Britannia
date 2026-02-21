@@ -294,7 +294,7 @@ export default function Header() {
 
       {/* Mobile header: logo centered + hamburger */}
       <div
-        className="flex md:hidden items-center justify-between h-[56px] px-4"
+        className="flex md:hidden items-center justify-between h-[70px] px-4"
         style={{ overflow: "visible" }}
       >
         {/* Spacer for centering */}
@@ -373,7 +373,7 @@ export default function Header() {
       <div
         className="md:hidden absolute left-0 right-0 z-40 overflow-hidden"
         style={{
-          top: "56px",
+          top: "70px",
           background:
             'url("/images/texture-dark.jpg") center/cover no-repeat, #1a1005',
           maxHeight: isMobileMenuOpen ? "400px" : "0px",

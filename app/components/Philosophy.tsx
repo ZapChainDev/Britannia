@@ -132,9 +132,9 @@ export default function Philosophy() {
               backgroundSize: "cover",
               backgroundPosition: "center bottom",
               paddingTop: "3rem",
-              paddingBottom: "3rem",
-              paddingLeft: "2rem",
-              paddingRight: "2rem",
+              paddingBottom: "4rem",
+              paddingLeft: "2.5rem",
+              paddingRight: "2.5rem",
             }}
           >
             {/* Image overlay so text stays readable */}
@@ -156,7 +156,7 @@ export default function Philosophy() {
               </p>
 
               {/* VIEW INVENTORY button */}
-              <button className="btn-medieval self-start mt-2">
+              <button className="btn-medieval self-start mt-6 mb-4">
                 VIEW INVENTORY
               </button>
             </div>
@@ -241,10 +241,15 @@ export default function Philosophy() {
               </div>
 
               {/* LEARN MORE button */}
-              <button className="btn-medieval mt-auto mb-4">LEARN MORE</button>
+              <button className="btn-medieval mt-auto mb-6 mt-6">
+                LEARN MORE
+              </button>
 
               {/* GBD wax seal bottom right */}
-              <div className="flex justify-end">
+              <div
+                className="flex justify-end"
+                style={{ paddingTop: "2rem", paddingBottom: "2rem" }}
+              >
                 <div
                   className="relative rounded-full flex items-center justify-center shadow-lg"
                   style={{

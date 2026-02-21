@@ -125,7 +125,10 @@ export default function Footer() {
       </div>
 
       {/* Outer wrapper: relative so we can absolutely position the social icons */}
-      <div className="relative py-12 sm:py-20 px-4 sm:px-12">
+      <div
+        className="relative px-4 sm:px-12"
+        style={{ paddingTop: "5rem", paddingBottom: "3rem" }}
+      >
         {/* Social icons — below content on mobile, absolute left on desktop */}
         <div className="hidden sm:flex absolute left-8 top-1/2 -translate-y-1/2 items-center gap-4">
           <a

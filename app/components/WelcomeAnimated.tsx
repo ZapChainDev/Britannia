@@ -6,12 +6,14 @@ export default function Welcome() {
   return (
     <section
       id="welcome"
-      className="relative w-full py-24 sm:py-48 baroque-section"
+      className="relative w-full baroque-section"
       style={{
         background:
           "url('/images/Welcome%20Background.png') center/cover no-repeat, #1a1208",
         marginBottom: "6rem",
         overflowX: "hidden" as const,
+        paddingTop: "8rem",
+        paddingBottom: "6rem",
       }}
     >
       {/* Dark overlay for readability */}
