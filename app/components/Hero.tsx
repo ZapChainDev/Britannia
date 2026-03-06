@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section
@@ -37,20 +41,28 @@ export default function Hero() {
       {/* ── Hero Content ── */}
       <div className="relative z-10 flex flex-col items-center justify-center flex-1 text-center px-8 sm:px-10 pt-24 sm:pt-40 pb-12 sm:pb-20">
         {/* Ornate top divider */}
-        <div className="flex items-center gap-3 mb-6 sm:mb-8">
+        <motion.div
+          className="flex items-center gap-3 mb-6 sm:mb-8"
+          initial={{ opacity: 0, scaleX: 0.4 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="h-px w-16 sm:w-20 bg-gradient-to-r from-transparent to-accent-gold/70" />
           <div className="w-1.5 h-1.5 rotate-45 bg-accent-gold" />
           <div className="h-px w-16 sm:w-20 bg-gradient-to-l from-transparent to-accent-gold/70" />
-        </div>
+        </motion.div>
 
         {/* Main Heading — stacked on mobile */}
-        <h1
+        <motion.h1
           className="font-heading font-bold text-cream leading-tight mb-3 sm:mb-4"
           style={{
             fontSize: "clamp(1.75rem, 8vw, 5.5rem)",
             textShadow:
               "0 2px 4px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.5)",
           }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
           <span className="block sm:inline">RESTORING ICONS</span>{" "}
           <span
@@ -61,21 +73,30 @@ export default function Hero() {
           </span>
           <br />
           BRITISH ENGINEERING
-        </h1>
+        </motion.h1>
 
         {/* Sub-heading */}
-        <p
+        <motion.p
           className="text-cream/80 font-body tracking-wide mb-8 sm:mb-10"
           style={{ fontSize: "clamp(0.85rem, 3.5vw, 1.25rem)" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
         >
           Classic Land Rover Defenders Rebuilt.{" "}
           <em className="italic text-cream/90">Perfected. Reborn.</em>
-        </p>
+        </motion.p>
 
         {/* VIEW INVENTORY Button — enlarged for mobile */}
-        <button className="btn-medieval btn-medieval--hero mt-2">
-          VIEW INVENTORY
-        </button>
+        <motion.div
+          initial={{ opacity: 0, y: 16, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
+        >
+          <button className="btn-medieval btn-medieval--hero mt-2">
+            VIEW INVENTORY
+          </button>
+        </motion.div>
       </div>
 
       {/* ── Bottom gold rule ── */}

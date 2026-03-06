@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Philosophy() {
   return (
     <section
@@ -145,20 +149,46 @@ export default function Philosophy() {
               style={{ marginLeft: "auto", marginRight: "auto" }}
             >
               {/* Heading */}
-              <h2 className="font-heading text-2xl md:text-3xl text-accent-gold tracking-[0.08em] font-bold leading-snug">
+              <motion.h2
+                className="font-heading text-2xl md:text-3xl text-accent-gold tracking-[0.08em] font-bold leading-snug"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+              >
                 Restoration Philosophy
-              </h2>
+              </motion.h2>
 
               {/* Body text */}
-              <p className="text-cream/85 text-sm md:text-base leading-loose font-body">
+              <motion.p
+                className="text-cream/85 text-sm md:text-base leading-loose font-body"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: 0.15,
+                }}
+                viewport={{ once: true }}
+              >
                 We meticulously restore, refurbish, and refine each Defender,
                 blending timeless British craftsmanship with modern upgrades.
-              </p>
+              </motion.p>
 
               {/* VIEW INVENTORY button */}
-              <button className="btn-medieval self-start mt-6 mb-4">
+              <motion.button
+                className="btn-medieval self-start mt-6 mb-4"
+                initial={{ opacity: 0, y: 16, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: 0.3,
+                }}
+                viewport={{ once: true }}
+              >
                 VIEW INVENTORY
-              </button>
+              </motion.button>
             </div>
           </div>
 
@@ -181,7 +211,13 @@ export default function Philosophy() {
 
             <div className="relative z-10 flex flex-col h-full p-8 items-center">
               {/* Logo centered at top */}
-              <div className="flex justify-center mb-5">
+              <motion.div
+                className="flex justify-center mb-5"
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+              >
                 <img
                   src="/images/Logo.png"
                   alt="Britannia Defender Group"
@@ -192,7 +228,7 @@ export default function Philosophy() {
                     filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.9))",
                   }}
                 />
-              </div>
+              </motion.div>
 
               {/* Gold divider */}
               <div
@@ -215,7 +251,18 @@ export default function Philosophy() {
                   "Expertly rebuilt by craftsmen",
                   "Rigorous testing & Quality Integrity validation",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <motion.div
+                    key={i}
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.22, 1, 0.36, 1],
+                      delay: i * 0.1,
+                    }}
+                    viewport={{ once: true }}
+                  >
                     <span
                       style={{
                         color: "#d4af37",
@@ -236,7 +283,7 @@ export default function Philosophy() {
                     >
                       {item}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
