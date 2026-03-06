@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import MusicPlayer from "./components/MusicPlayer";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -95,6 +96,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${cormorant.variable} antialiased`}
       >
         {children}
+        <MusicPlayer />
       </body>
     </html>
   );
