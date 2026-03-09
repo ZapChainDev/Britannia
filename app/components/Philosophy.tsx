@@ -145,12 +145,16 @@ export default function Philosophy() {
             <div className="absolute inset-0 bg-[#1a1005]/65" />
 
             <div
-              className="relative z-10 flex flex-col gap-6 max-w-sm mx-auto md:mx-0"
+              className="relative z-10 flex flex-col gap-6 max-w-sm mx-auto text-center"
               style={{ marginLeft: "auto", marginRight: "auto" }}
             >
               {/* Heading */}
               <motion.h2
-                className="font-heading text-2xl md:text-3xl text-accent-gold tracking-[0.08em] font-bold leading-snug"
+                className="font-heading text-3xl md:text-4xl text-accent-gold tracking-[0.12em] font-bold leading-snug text-center"
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  textShadow: "0 2px 12px rgba(212,175,55,0.3)",
+                }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -161,7 +165,11 @@ export default function Philosophy() {
 
               {/* Body text */}
               <motion.p
-                className="text-cream/85 text-sm md:text-base leading-loose font-body"
+                className="text-cream/90 text-base md:text-lg leading-loose font-body text-center italic"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "clamp(1rem, 3.5vw, 1.15rem)",
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -174,21 +182,6 @@ export default function Philosophy() {
                 We meticulously restore, refurbish, and refine each Defender,
                 blending timeless British craftsmanship with modern upgrades.
               </motion.p>
-
-              {/* VIEW INVENTORY button */}
-              <motion.button
-                className="btn-medieval self-start mt-6 mb-4"
-                initial={{ opacity: 0, y: 16, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{
-                  duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1],
-                  delay: 0.3,
-                }}
-                viewport={{ once: true }}
-              >
-                VIEW INVENTORY
-              </motion.button>
             </div>
           </div>
 
@@ -243,7 +236,11 @@ export default function Philosophy() {
               {/* Checklist — centered block */}
               <div
                 className="flex flex-col gap-3 mb-6"
-                style={{ width: "100%", maxWidth: "260px" }}
+                style={{
+                  width: "100%",
+                  maxWidth: "260px",
+                  margin: "0 auto 1.5rem",
+                }}
               >
                 {[
                   "Pride, Precision, Perfection",
@@ -275,10 +272,11 @@ export default function Philosophy() {
                     </span>
                     <span
                       style={{
-                        color: "rgba(245,241,232,0.9)",
-                        fontFamily: "var(--font-body)",
-                        fontSize: "12px",
-                        lineHeight: "1.5",
+                        color: "rgba(245,241,232,0.92)",
+                        fontFamily: "var(--font-heading)",
+                        fontSize: "13px",
+                        letterSpacing: "0.05em",
+                        lineHeight: "1.6",
                       }}
                     >
                       {item}

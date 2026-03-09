@@ -175,9 +175,6 @@ export default function Welcome() {
           They are icons – reborn.
         </p>
 
-        {/* CTA Button */}
-        <button className="btn-medieval mt-16">VIEW INVENTORY</button>
-
         {/* Bottom ornament */}
         <div className="flex items-center justify-center mt-16">
           <div className="h-px w-16 bg-accent-gold/60"></div>

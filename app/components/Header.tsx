@@ -316,8 +316,8 @@ export default function Header() {
         className="flex md:hidden items-center justify-between h-[70px] px-4"
         style={{ overflow: "visible" }}
       >
-        {/* Spacer for centering */}
-        <div className="w-10" />
+        {/* Spacer for centering — must match hamburger button size */}
+        <div style={{ width: "44px", minWidth: "44px" }} />
 
         {/* Mobile logo */}
         <a
@@ -339,6 +339,7 @@ export default function Header() {
               filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.9))",
               position: "relative",
               zIndex: 60,
+              marginTop: "16px",
             }}
           />
         </a>

@@ -86,17 +86,6 @@ export default function Hero() {
           Classic Land Rover Defenders Rebuilt.{" "}
           <em className="italic text-cream/90">Perfected. Reborn.</em>
         </motion.p>
-
-        {/* VIEW INVENTORY Button — enlarged for mobile */}
-        <motion.div
-          initial={{ opacity: 0, y: 16, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
-        >
-          <button className="btn-medieval btn-medieval--hero mt-2">
-            VIEW INVENTORY
-          </button>
-        </motion.div>
       </div>
 
       {/* ── Bottom gold rule ── */}

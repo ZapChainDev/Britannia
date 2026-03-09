@@ -10,7 +10,6 @@ export default function Welcome() {
       style={{
         background:
           "url('/images/Welcome%20Background.png') center/cover no-repeat, #1a1208",
-        marginBottom: "6rem",
         overflowX: "hidden" as const,
         paddingTop: "8rem",
         paddingBottom: "6rem",
@@ -201,17 +200,6 @@ export default function Welcome() {
             <br />
             They are icons – reborn.
           </motion.p>
-
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="btn-medieval mt-14"
-          >
-            VIEW INVENTORY
-          </motion.button>
         </div>
       </div>
     </section>

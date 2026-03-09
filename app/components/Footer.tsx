@@ -273,16 +273,18 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="flex items-center gap-2 font-heading text-xs tracking-wider text-cream/60 text-center">
-            <span className="text-accent-gold/50">◆</span>
-            <span>
-              © 2022{" "}
-              <strong className="font-heading tracking-widest">
-                BRITANNIA DEFENDER GROUP LTD.
-              </strong>
-              <span className="mx-1 sm:mx-2 text-accent-gold/50">—</span>
-              ALL RIGHTS RESERVED
+            <span className="text-accent-gold/50 shrink-0">◆</span>
+            <span className="flex flex-col sm:flex-row sm:items-center sm:gap-1 leading-relaxed">
+              <span>
+                © 2022{" "}
+                <strong className="font-heading tracking-widest">
+                  BRITANNIA DEFENDER GROUP LTD.
+                </strong>
+              </span>
+              <span className="hidden sm:inline text-accent-gold/50">—</span>
+              <span>ALL RIGHTS RESERVED</span>
             </span>
-            <span className="text-accent-gold/50">◆</span>
+            <span className="text-accent-gold/50 shrink-0">◆</span>
           </div>
 
           {/* Footer Links */}
