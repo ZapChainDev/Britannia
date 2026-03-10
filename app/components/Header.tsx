@@ -150,7 +150,7 @@ export default function Header() {
         style={{
           gridTemplateColumns: "1fr auto 1fr",
           alignItems: "flex-start",
-          height: "64px",
+          height: "72px",
           padding: "0 3rem",
           overflow: "visible",
         }}
@@ -162,7 +162,7 @@ export default function Header() {
             alignItems: "center",
             justifyContent: "flex-end",
             gap: "0.5rem",
-            height: "64px",
+            height: "72px",
             paddingBottom: "12px",
           }}
         >
@@ -215,7 +215,7 @@ export default function Header() {
             justifyContent: "center",
             overflow: "visible",
             zIndex: 60,
-            padding: "0 2rem",
+            padding: "6px 4rem 0",
           }}
         >
           <a
@@ -230,7 +230,7 @@ export default function Header() {
               src="/images/Logo.png"
               alt="Britannia Defender Group"
               style={{
-                height: "140px",
+                height: "132px",
                 width: "auto",
                 objectFit: "contain",
                 display: "block",
@@ -249,7 +249,7 @@ export default function Header() {
             alignItems: "center",
             justifyContent: "flex-start",
             gap: "0.5rem",
-            height: "64px",
+            height: "72px",
             paddingBottom: "12px",
           }}
         >
@@ -313,7 +313,7 @@ export default function Header() {
 
       {/* Mobile header: logo centered + hamburger */}
       <div
-        className="flex md:hidden items-center justify-between h-[70px] px-4"
+        className="flex md:hidden items-center justify-between h-[90px] px-4"
         style={{ overflow: "visible" }}
       >
         {/* Spacer for centering — must match hamburger button size */}
@@ -339,7 +339,8 @@ export default function Header() {
               filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.9))",
               position: "relative",
               zIndex: 60,
-              marginTop: "16px",
+              marginTop: "17px",
+              marginBottom: "6px",
             }}
           />
         </a>
@@ -393,7 +394,7 @@ export default function Header() {
       <div
         className="md:hidden absolute left-0 right-0 z-40 overflow-hidden"
         style={{
-          top: "70px",
+          top: "90px",
           background:
             'url("/images/texture-dark.jpg") center/cover no-repeat, #1a1005',
           maxHeight: isMobileMenuOpen ? "400px" : "0px",
