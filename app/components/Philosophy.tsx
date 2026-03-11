@@ -285,11 +285,6 @@ export default function Philosophy() {
                 ))}
               </div>
 
-              {/* LEARN MORE button */}
-              <button className="btn-medieval mt-auto mb-6 mt-6">
-                LEARN MORE
-              </button>
-
               {/* GBD wax seal bottom right */}
               <div
                 className="flex justify-end"

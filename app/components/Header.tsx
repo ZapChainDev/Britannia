@@ -173,7 +173,7 @@ export default function Header() {
               fontSize: "11px",
               letterSpacing: "0.2em",
               fontFamily: "var(--font-heading)",
-              padding: "0 0.75rem",
+              padding: "0 1.25rem",
               textDecoration: "none",
               whiteSpace: "nowrap",
               background: "none",
@@ -185,26 +185,6 @@ export default function Header() {
           >
             HOME
           </button>
-          <span style={{ color: "rgba(212,175,55,0.5)", fontSize: "12px" }}>
-            |
-          </span>
-          <a
-            href="#welcome"
-            onClick={(e) => scrollToSection(e, "welcome")}
-            style={{
-              color: "#f5f1e8",
-              fontSize: "11px",
-              letterSpacing: "0.2em",
-              fontFamily: "var(--font-heading)",
-              padding: "0 0.75rem",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.color = "#d4af37")}
-            onMouseOut={(e) => (e.currentTarget.style.color = "#f5f1e8")}
-          >
-            OUR DEFENDERS
-          </a>
         </div>
 
         {/* Centre Logo — overflows below the bar */}
@@ -260,7 +240,7 @@ export default function Header() {
               fontSize: "11px",
               letterSpacing: "0.2em",
               fontFamily: "var(--font-heading)",
-              padding: "0 0.75rem",
+              padding: "0 1.25rem",
               textDecoration: "none",
               whiteSpace: "nowrap",
             }}
@@ -272,26 +252,6 @@ export default function Header() {
           <span style={{ color: "rgba(212,175,55,0.5)", fontSize: "12px" }}>
             |
           </span>
-          <a
-            href="#philosophy"
-            onClick={(e) => scrollToSection(e, "philosophy")}
-            style={{
-              color: "#f5f1e8",
-              fontSize: "11px",
-              letterSpacing: "0.2em",
-              fontFamily: "var(--font-heading)",
-              padding: "0 0.75rem",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.color = "#d4af37")}
-            onMouseOut={(e) => (e.currentTarget.style.color = "#f5f1e8")}
-          >
-            CERTIFICATION
-          </a>
-          <span style={{ color: "rgba(212,175,55,0.5)", fontSize: "12px" }}>
-            |
-          </span>
           <Link
             href="/contact"
             style={{
@@ -299,7 +259,7 @@ export default function Header() {
               fontSize: "11px",
               letterSpacing: "0.2em",
               fontFamily: "var(--font-heading)",
-              padding: "0 0.75rem",
+              padding: "0 1.25rem",
               textDecoration: "none",
               whiteSpace: "nowrap",
             }}
@@ -427,26 +387,7 @@ export default function Header() {
           >
             HOME
           </button>
-          {[
-            { label: "OUR DEFENDERS", id: "welcome" },
-            { label: "CERTIFICATION", id: "philosophy" },
-          ].map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => scrollToSection(e, item.id)}
-              className="w-full text-center py-3 text-cream hover:text-accent-gold transition-colors duration-300"
-              style={{
-                fontSize: "12px",
-                letterSpacing: "0.2em",
-                fontFamily: "var(--font-heading)",
-                textDecoration: "none",
-                borderBottom: "1px solid rgba(212,175,55,0.15)",
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
+
           <Link
             href="/about"
             className="w-full text-center py-3 text-cream hover:text-accent-gold transition-colors duration-300"
