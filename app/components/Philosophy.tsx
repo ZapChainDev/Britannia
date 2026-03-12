@@ -150,7 +150,7 @@ export default function Philosophy() {
             >
               {/* Heading */}
               <motion.h2
-                className="font-heading text-3xl md:text-4xl text-accent-gold tracking-[0.12em] font-bold leading-snug text-center"
+                className="font-heading text-xl md:text-4xl text-accent-gold tracking-[0.08em] md:tracking-[0.12em] font-bold leading-snug text-center"
                 style={{
                   fontFamily: "var(--font-heading)",
                   textShadow: "0 2px 12px rgba(212,175,55,0.3)",
@@ -168,7 +168,7 @@ export default function Philosophy() {
                 className="text-cream/90 text-base md:text-lg leading-loose font-body text-center italic"
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontSize: "clamp(1rem, 3.5vw, 1.15rem)",
+                  fontSize: "clamp(0.8rem, 3vw, 1.15rem)",
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

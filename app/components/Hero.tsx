@@ -56,7 +56,7 @@ export default function Hero() {
         <motion.h1
           className="font-heading font-bold text-cream leading-tight mb-3 sm:mb-4"
           style={{
-            fontSize: "clamp(1.75rem, 8vw, 5.5rem)",
+            fontSize: "clamp(1.1rem, 6.5vw, 5.5rem)",
             textShadow:
               "0 2px 4px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.7), 0 0 60px rgba(0,0,0,0.5)",
           }}
@@ -78,7 +78,7 @@ export default function Hero() {
         {/* Sub-heading */}
         <motion.p
           className="text-cream/80 font-body tracking-wide mb-8 sm:mb-10"
-          style={{ fontSize: "clamp(0.85rem, 3.5vw, 1.25rem)" }}
+          style={{ fontSize: "clamp(0.75rem, 3vw, 1.25rem)" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}

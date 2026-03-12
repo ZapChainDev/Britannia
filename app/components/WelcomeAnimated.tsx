@@ -163,7 +163,7 @@ export default function Welcome() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="font-heading text-2xl md:text-3xl text-cream mb-10 tracking-[0.15em] font-bold"
+            className="font-heading text-lg md:text-3xl text-cream mb-10 tracking-[0.1em] md:tracking-[0.15em] font-bold"
           >
             Welcome to Britannia Defender Group
           </motion.h2>
@@ -194,7 +194,7 @@ export default function Welcome() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="text-base md:text-lg italic text-cream font-semibold mt-14 leading-loose font-body"
+            className="text-sm md:text-lg italic text-cream font-semibold mt-14 leading-loose font-body"
           >
             These are not simply vehicles.
             <br />
