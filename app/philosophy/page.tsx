@@ -32,7 +32,7 @@ function FadeIn({
 
 function GoldDivider() {
   return (
-    <div className="flex items-center gap-4 w-full max-w-sm mx-auto my-10">
+    <div className="flex items-center gap-4 w-full my-10">
       <div className="flex-1 h-px bg-accent-gold/30" />
       <svg
         width="24"
@@ -205,9 +205,11 @@ export default function PhilosophyPage() {
               <span className="text-cream/90">PHILOSOPHY</span>
             </h1>
 
-            <div className="flex items-center gap-3 w-48">
+            <div className="flex items-center justify-center gap-3 w-48 mx-auto">
               <div className="flex-1 h-px bg-accent-gold/40" />
-              <span className="text-accent-gold/60 text-xs">◆</span>
+              <span className="inline-flex items-center justify-center w-4 text-accent-gold/60 text-xs">
+                ◆
+              </span>
               <div className="flex-1 h-px bg-accent-gold/40" />
             </div>
           </motion.div>
@@ -251,9 +253,11 @@ export default function PhilosophyPage() {
                   <h2 className="font-heading text-lg sm:text-xl tracking-[0.22em] text-accent-gold text-center">
                     RESTORATION PHILOSOPHY
                   </h2>
-                  <div className="flex items-center gap-3 w-40">
+                  <div className="flex items-center justify-center gap-3 w-40 mx-auto">
                     <div className="flex-1 h-px bg-accent-gold/30" />
-                    <span className="text-accent-gold/50 text-[8px]">✦</span>
+                    <span className="inline-flex items-center justify-center w-4 text-accent-gold/50 text-[8px]">
+                      ✦
+                    </span>
                     <div className="flex-1 h-px bg-accent-gold/30" />
                   </div>
                 </div>
@@ -275,7 +279,7 @@ export default function PhilosophyPage() {
                       resilience, exploration, and service.
                     </p>
                     <p>
-                      Every Defender we work on is treated as a future classic —
+                      Every Defender we work on is treated as a future classic -
                       restored with respect for its heritage while ensuring it
                       remains reliable and capable for modern use.
                     </p>
@@ -358,18 +362,22 @@ export default function PhilosophyPage() {
               {/* Bottom tagline */}
               <FadeIn>
                 <div className="mt-12 flex flex-col items-center gap-3">
-                  <div className="flex items-center gap-3 w-full max-w-xs">
+                  <div className="flex items-center justify-center gap-3 w-full max-w-xs mx-auto">
                     <div className="flex-1 h-px bg-accent-gold/25" />
-                    <span className="text-accent-gold/50 text-[10px]">◆</span>
+                    <span className="inline-flex items-center justify-center w-4 text-accent-gold/50 text-[10px]">
+                      ◆
+                    </span>
                     <div className="flex-1 h-px bg-accent-gold/25" />
                   </div>
                   <p className="font-heading text-sm sm:text-base tracking-[0.28em] text-cream/70 text-center">
                     RESTORING <span className="text-accent-gold/80">ICONS</span>{" "}
                     OF BRITISH ENGINEERING
                   </p>
-                  <div className="flex items-center gap-3 w-full max-w-xs">
+                  <div className="flex items-center justify-center gap-3 w-full max-w-xs mx-auto">
                     <div className="flex-1 h-px bg-accent-gold/25" />
-                    <span className="text-accent-gold/50 text-[10px]">◆</span>
+                    <span className="inline-flex items-center justify-center w-4 text-accent-gold/50 text-[10px]">
+                      ◆
+                    </span>
                     <div className="flex-1 h-px bg-accent-gold/25" />
                   </div>
                 </div>
