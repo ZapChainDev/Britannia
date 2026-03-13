@@ -253,6 +253,25 @@ export default function Header() {
             |
           </span>
           <Link
+            href="/philosophy"
+            style={{
+              color: "#f5f1e8",
+              fontSize: "11px",
+              letterSpacing: "0.2em",
+              fontFamily: "var(--font-heading)",
+              padding: "0 1.25rem",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.color = "#d4af37")}
+            onMouseOut={(e) => (e.currentTarget.style.color = "#f5f1e8")}
+          >
+            PHILOSOPHY
+          </Link>
+          <span style={{ color: "rgba(212,175,55,0.5)", fontSize: "12px" }}>
+            |
+          </span>
+          <Link
             href="/contact"
             style={{
               color: "#f5f1e8",
@@ -401,6 +420,20 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             ABOUT
+          </Link>
+          <Link
+            href="/philosophy"
+            className="w-full text-center py-3 text-cream hover:text-accent-gold transition-colors duration-300"
+            style={{
+              fontSize: "12px",
+              letterSpacing: "0.2em",
+              fontFamily: "var(--font-heading)",
+              textDecoration: "none",
+              borderBottom: "1px solid rgba(212,175,55,0.15)",
+            }}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            PHILOSOPHY
           </Link>
           <Link
             href="/contact"

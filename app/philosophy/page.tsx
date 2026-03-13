@@ -6,7 +6,6 @@ import { motion, useInView } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-/* Scroll-triggered fade-in + scale wrapper */
 function FadeIn({
   children,
   delay = 0,
@@ -31,7 +30,6 @@ function FadeIn({
   );
 }
 
-/* Reusable gold section divider */
 function GoldDivider() {
   return (
     <div className="flex items-center gap-4 w-full max-w-sm mx-auto my-10">
@@ -55,10 +53,9 @@ function GoldDivider() {
   );
 }
 
-export default function AboutPage() {
+export default function PhilosophyPage() {
   return (
     <>
-      {/* Victorian page-frame edges */}
       <div className="historic-frame-top" />
       <div className="historic-frame-bottom" />
       <div className="historic-frame-left" />
@@ -67,22 +64,18 @@ export default function AboutPage() {
       <Header />
 
       <main className="relative w-full overflow-hidden">
-        {/* Background image */}
+        {/* Background */}
         <div
           className="absolute inset-0 z-0"
           style={{
             background:
-              "url('/images/Welcome%20Background.png') center/cover no-repeat, #1a1208",
+              "url('/images/Philsophy.png') center/cover no-repeat, #1a1208",
           }}
         />
-
-        {/* Dark overlay for readability */}
         <div
-          className="absolute inset-0 z-[1] bg-[#1a1005]/75"
+          className="absolute inset-0 z-[1] bg-[#1a1005]/80"
           style={{ pointerEvents: "none" }}
         />
-
-        {/* Vignette edges */}
         <div
           className="absolute inset-0 z-[2] pointer-events-none"
           style={{
@@ -91,7 +84,7 @@ export default function AboutPage() {
           }}
         />
 
-        {/* Victorian-Baroque corner ornaments */}
+        {/* Corner ornaments */}
         <div className="absolute top-32 left-4 w-24 h-24 z-10 hidden md:block">
           <svg
             width="96"
@@ -153,70 +146,6 @@ export default function AboutPage() {
             />
           </svg>
         </div>
-        <div
-          className="absolute bottom-32 left-4 w-24 h-24 z-10 hidden md:block"
-          style={{ transform: "scaleY(-1)" }}
-        >
-          <svg
-            width="96"
-            height="96"
-            viewBox="0 0 120 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 4 L60 4 Q72 4 72 16 Q72 28 60 28 L28 28 Q16 28 16 40 L16 60 Q16 72 4 72 L4 4Z"
-              stroke="#d4af37"
-              strokeWidth="1.2"
-              fill="none"
-              opacity="0.5"
-            />
-            <path
-              d="M10 10 L44 10 Q52 10 52 18 Q52 26 44 26 L26 26 Q18 26 18 34 L18 44 Q18 52 10 52 L10 10Z"
-              stroke="#d4af37"
-              strokeWidth="0.8"
-              fill="none"
-              opacity="0.3"
-            />
-            <path
-              d="M8 8 C8 4, 14 2, 16 6 C18 2, 24 4, 24 8 C24 14, 16 18, 16 18 C16 18, 8 14, 8 8Z"
-              fill="#d4af37"
-              opacity="0.25"
-            />
-          </svg>
-        </div>
-        <div
-          className="absolute bottom-32 right-4 w-24 h-24 z-10 hidden md:block"
-          style={{ transform: "scale(-1,-1)" }}
-        >
-          <svg
-            width="96"
-            height="96"
-            viewBox="0 0 120 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 4 L60 4 Q72 4 72 16 Q72 28 60 28 L28 28 Q16 28 16 40 L16 60 Q16 72 4 72 L4 4Z"
-              stroke="#d4af37"
-              strokeWidth="1.2"
-              fill="none"
-              opacity="0.5"
-            />
-            <path
-              d="M10 10 L44 10 Q52 10 52 18 Q52 26 44 26 L26 26 Q18 26 18 34 L18 44 Q18 52 10 52 L10 10Z"
-              stroke="#d4af37"
-              strokeWidth="0.8"
-              fill="none"
-              opacity="0.3"
-            />
-            <path
-              d="M8 8 C8 4, 14 2, 16 6 C18 2, 24 4, 24 8 C24 14, 16 18, 16 18 C16 18, 8 14, 8 8Z"
-              fill="#d4af37"
-              opacity="0.25"
-            />
-          </svg>
-        </div>
 
         {/* Content */}
         <div
@@ -230,7 +159,6 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Lion / shield crest icon */}
             <svg
               width="48"
               height="56"
@@ -273,11 +201,10 @@ export default function AboutPage() {
             </svg>
 
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl tracking-[0.15em] text-cream text-center">
-              <span className="text-accent-gold">ABOUT</span>{" "}
-              <span className="text-cream/90">US</span>
+              <span className="text-accent-gold">OUR</span>{" "}
+              <span className="text-cream/90">PHILOSOPHY</span>
             </h1>
 
-            {/* Gold divider */}
             <div className="flex items-center gap-3 w-48">
               <div className="flex-1 h-px bg-accent-gold/40" />
               <span className="text-accent-gold/60 text-xs">◆</span>
@@ -302,7 +229,6 @@ export default function AboutPage() {
                 "0 0 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(212,175,55,0.1)",
             }}
           >
-            {/* Card inner border */}
             <div
               className="absolute inset-[3px] pointer-events-none rounded-sm"
               style={{ border: "1px solid rgba(212, 175, 55, 0.12)" }}
@@ -317,14 +243,13 @@ export default function AboutPage() {
                 paddingBottom: "3.5rem",
               }}
             >
-              {/* Company name header */}
               <FadeIn delay={0.1}>
                 <div className="flex flex-col items-center gap-2 mb-10">
                   <p className="font-heading text-[10px] tracking-[0.35em] text-accent-gold/50 text-center uppercase">
-                    Est. 17 February 2026
+                    Britannia Defender Group
                   </p>
                   <h2 className="font-heading text-lg sm:text-xl tracking-[0.22em] text-accent-gold text-center">
-                    BRITANNIA DEFENDER GROUP
+                    RESTORATION PHILOSOPHY
                   </h2>
                   <div className="flex items-center gap-3 w-40">
                     <div className="flex-1 h-px bg-accent-gold/30" />
@@ -334,37 +259,25 @@ export default function AboutPage() {
                 </div>
               </FadeIn>
 
-              {/* ── Section 1: About ── */}
+              {/* Section 1 */}
               <FadeIn>
                 <div className="mb-2">
                   <h3 className="font-heading text-[11px] tracking-[0.3em] text-accent-gold/70 mb-4 text-center uppercase">
-                    🇬🇧 &nbsp;Our Story
+                    More Than a Vehicle
                   </h3>
-                  <div className="flex flex-col gap-4 font-body text-cream/80 text-sm sm:text-base leading-relaxed">
+                  <div className="flex flex-col gap-4 font-body text-cream/80 text-sm sm:text-base leading-relaxed text-center">
                     <p>
-                      Britannia Defender Group was founded on{" "}
-                      <span className="text-accent-gold/90">
-                        17 February 2026
-                      </span>
-                      , beneath the quiet energy of a New Moon and at the dawn
-                      of the Chinese New Year — the Year of the Fire Horse.
-                    </p>
-                    <p>It was an appropriate beginning.</p>
-                    <p>
-                      For years, the idea had existed only on paper — a vision
-                      to restore and preserve one of Britain's most iconic
-                      machines: the Land Rover Defender. Vehicles built in the
-                      United Kingdom and trusted across the Commonwealth for
-                      generations.
-                    </p>
-                    <p>These machines were never simply vehicles.</p>
-                    <p>
-                      They were tools of exploration, service, and endurance —
-                      working in the harshest environments on earth.
+                      At BDG we believe that the Defender is more than a
+                      vehicle.
                     </p>
                     <p>
-                      At Britannia Defender Group, our mission is to ensure
-                      these icons continue their journey.
+                      It represents a tradition of British engineering built for
+                      resilience, exploration, and service.
+                    </p>
+                    <p>
+                      Every Defender we work on is treated as a future classic —
+                      restored with respect for its heritage while ensuring it
+                      remains reliable and capable for modern use.
                     </p>
                   </div>
                 </div>
@@ -374,44 +287,35 @@ export default function AboutPage() {
                 <GoldDivider />
               </FadeIn>
 
-              {/* ── Section 2: The Founder ── */}
+              {/* Section 2 */}
               <FadeIn>
                 <div className="mb-2">
                   <h3 className="font-heading text-[11px] tracking-[0.3em] text-accent-gold/70 mb-4 text-center uppercase">
-                    The Founder
+                    Our Process
                   </h3>
-                  <div className="flex flex-col gap-4 font-body text-cream/80 text-sm sm:text-base leading-relaxed">
-                    <p>
-                      Britannia Defender Group was created by{" "}
-                      <span className="text-accent-gold/90">
-                        Zakaria Eze-Love
-                      </span>
-                      , a lifelong admirer of classic engineering and mechanical
-                      heritage.
+                  <div className="flex flex-col gap-4 font-body text-cream/80 text-sm sm:text-base leading-relaxed text-center">
+                    <p className="text-accent-gold/70 font-heading text-[10px] tracking-[0.2em] uppercase">
+                      Our process focuses on:
                     </p>
+                    <ul className="flex flex-col gap-2 items-center">
+                      {[
+                        "Careful vehicle selection",
+                        "Structural integrity and chassis preservation",
+                        "Precision mechanical refurbishment",
+                        "Thoughtful upgrades where appropriate",
+                        "Authentic character and timeless styling",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <span className="text-accent-gold/60 mt-1 text-xs flex-shrink-0">
+                            ◆
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                     <p>
-                      The journey began with Zak's own Defender — a{" "}
-                      <span className="text-cream/95">2001 TD5</span> imported
-                      from Singapore. The vehicle was restored and reimagined
-                      with bold styling, large wheels, and aggressive off-road
-                      tyres.
-                    </p>
-                    <p>
-                      It quickly became a head-turner at local rallies, standing
-                      out among modern vehicles and reminding people of the
-                      Defender's enduring character.
-                    </p>
-                    <p>
-                      What began as a personal project soon revealed something
-                      deeper:
-                    </p>
-                    <p className="italic text-cream/70">
-                      these machines still inspired loyalty, admiration, and
-                      nostalgia wherever they appeared.
-                    </p>
-                    <p>
-                      That moment sparked the vision for Britannia Defender
-                      Group.
+                      Each vehicle is approached not as a commodity, but as a
+                      machine with history and purpose.
                     </p>
                   </div>
                 </div>
@@ -421,27 +325,32 @@ export default function AboutPage() {
                 <GoldDivider />
               </FadeIn>
 
-              {/* ── Section 4: Restoring Icons ── */}
+              {/* Section 3 */}
               <FadeIn>
                 <div className="mb-2">
                   <h3 className="font-heading text-[11px] tracking-[0.3em] text-accent-gold/70 mb-4 text-center uppercase">
-                    Restoring Icons
+                    Pride, Precision, Perfection
                   </h3>
-                  <div className="flex flex-col gap-4 font-body text-cream/80 text-sm sm:text-base leading-relaxed">
+                  <div className="flex flex-col gap-4 font-body text-cream/80 text-sm sm:text-base leading-relaxed text-center">
                     <p>
-                      The Land Rover Defender served farmers, explorers,
-                      engineers, soldiers, and adventurers around the world for
-                      more than half a century.
+                      We meticulously restore, refurbish, and refine each
+                      Defender, blending timeless British craftsmanship with
+                      modern upgrades.
                     </p>
-                    <p>
-                      Britannia Defender Group exists to ensure these vehicles
-                      continue that legacy.
-                    </p>
-                    <p>
-                      Through careful restoration and respectful modernisation,
-                      we aim to return these machines to the road — ready for
-                      the next chapter of their journey.
-                    </p>
+                    <ul className="flex flex-col gap-2 items-center">
+                      {[
+                        "Hand-selected & stripped bare",
+                        "Expertly rebuilt by craftsmen",
+                        "Rigorous testing & Quality Integrity validation",
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <span className="text-accent-gold/60 mt-1 text-xs flex-shrink-0">
+                            ✓
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </FadeIn>

@@ -243,13 +243,6 @@ export default function Footer() {
             </Link>
             <span className="text-accent-gold/30">|</span>
             <Link
-              href="/inventory"
-              className="hover:text-accent-gold transition-colors duration-300"
-            >
-              INVENTORY
-            </Link>
-            <span className="text-accent-gold/30">|</span>
-            <Link
               href="/philosophy"
               className="hover:text-accent-gold transition-colors duration-300"
             >
