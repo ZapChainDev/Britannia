@@ -129,9 +129,9 @@ export default function Footer() {
         className="relative px-4 sm:px-12"
         style={{ paddingTop: "5rem", paddingBottom: "3rem" }}
       >
-        {/* Centered text content */
+        {/* Centered text content */}
         <div className="flex flex-col items-center gap-6">
-          {/* Crown / logo mark */
+          {/* Crown / logo mark */}
           <div className="flex flex-col items-center gap-3">
             <svg
               width="38"
